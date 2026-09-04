@@ -1,0 +1,25 @@
+{
+    "name": "Nikhil Thakur Portfolio",
+    "short_name": "Nikhil Portfolio",
+    "description": "Nikhil Thakur — AI, Python, Data Analytics & Full-Stack Web Development Portfolio.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#06101d",
+    "theme_color": "#08111f",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/icon-192.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icon-512.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}
