@@ -1,42 +1,38 @@
-# Nikhil Thakur Advanced Portfolio — V2
+# Nikhil Thakur Advanced Portfolio
 
-This version is based on the information in Nikhil Thakur's resume and is intentionally self-contained.
+A self-contained personal portfolio for Nikhil Thakur, featuring a responsive interface, modern animations, project case studies, resume access, and Progressive Web App support.
 
-The portfolio includes:
+## Included
 
 - Responsive portfolio UI
-- Responsive CSS
-- Animations
-- JavaScript functionality
+- Dark / light theme
+- Smooth animations and interactions
+- Projects, skills, internships, education, certifications and contact sections
+- Resume viewer
+- LinkedIn and contact links
+- Progressive Web App support
 
 All portfolio UI, CSS, animations, and JavaScript are contained inside `index.html`.
 
 ## Run Locally
 
-1. Open the `site` folder in VS Code.
-2. Open `index.html` using **Live Server** for the full PWA experience.
-3. You can also open `index.html` directly in a browser. The UI will still render because the CSS and JavaScript are embedded inside the file.
+Open this folder in VS Code and run `index.html` with the **Live Server** extension for the best local experience. The page can also be opened directly in a browser.
 
 ## Deploy
 
-Upload the entire `site` folder to any static hosting platform such as:
+Upload the complete project to a static hosting platform such as GitHub Pages, Vercel, or Netlify.
 
-- GitHub Pages
-- Vercel
-- Netlify
-- Any other HTTPS static host
+Keep these files together for PWA support:
 
-> **Important:** Do not upload only `index.html` if you want PWA installation support. Keep the following files and folders together:
->
-> - `index.html`
-> - `manifest.webmanifest`
-> - `sw.js`
-> - `assets/`
+- `index.html`
+- `manifest.webmanifest`
+- `sw.js`
+- `assets/`
 
 ## Project Structure
 
 ```text
-site/
+Nikhil Thakur Portfolio Website/
 ├── index.html
 ├── manifest.webmanifest
 ├── sw.js
@@ -44,4 +40,16 @@ site/
 └── assets/
     ├── icon-192.svg
     ├── icon-512.svg
-    └── Nikhil_Thakur_Resume.pdf
+    ├── Nikhil_Thakur_Resume.pdf
+    └── nikhil-profile.jpg
+```
+
+## Featured Projects
+
+1. AttendFace – Face Recognition Smart Attendance
+2. Portfolio Website
+3. StockVision AI
+
+## Current Focus
+
+Python, DSA, Full-Stack Development, Artificial Intelligence, Machine Learning, Data Analytics, and Data Visualization.

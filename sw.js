@@ -2,12 +2,13 @@
    SERVICE WORKER CONFIGURATION
    ========================================================= */
 
-const CACHE_NAME = "nikhil-portfolio-v1";
+const CACHE_NAME = "nikhil-portfolio-v6";
 
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
     "./manifest.webmanifest",
+    "./assets/portfolio-background.png",
 ];
 
 
@@ -22,7 +23,6 @@ self.addEventListener("install", (event) => {
         })
     );
 
-    // Activate the new service worker immediately.
     self.skipWaiting();
 });
 
@@ -44,7 +44,6 @@ self.addEventListener("activate", (event) => {
             })
     );
 
-    // Take control of all open pages immediately.
     self.clients.claim();
 });
 
@@ -57,12 +56,10 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
 
-            // Return cached response when available.
             if (cachedResponse) {
                 return cachedResponse;
             }
 
-            // Otherwise fetch the requested resource.
             return fetch(event.request)
                 .then((response) => {
 
@@ -78,7 +75,6 @@ self.addEventListener("fetch", (event) => {
                         return response;
                     }
 
-                    // Clone the response before caching it.
                     const responseClone = response.clone();
 
                     caches.open(CACHE_NAME).then((cache) => {
@@ -87,8 +83,6 @@ self.addEventListener("fetch", (event) => {
 
                     return response;
                 })
-
-                // Fallback to index.html when the network fails.
                 .catch(() => {
                     return caches.match("./index.html");
                 });

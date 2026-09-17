@@ -60,14 +60,14 @@
                 "Segoe UI",
                 sans-serif;
 
-            background: #06101d;
+            background-color: #06101d;
             color: #edf4ff;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         body.light {
-            background: #f4f7fb;
+            background-color: #eef3f8;
             color: #111827;
         }
 
@@ -184,48 +184,57 @@
 
         /* =========================================================
            PAGE BACKGROUND
-        ========================================================= */
+        ========================================================== */
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -3;
+        body {
+            background-color: #06101d;
+            background-image:
+                linear-gradient(
+                    180deg,
+                    rgba(3, 12, 24, 0.10) 0%,
+                    rgba(3, 12, 24, 0.04) 45%,
+                    rgba(3, 12, 24, 0.16) 100%
+                ),
+                url("assets/portfolio-background.png");
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-blend-mode: normal;
+        }
 
-            background:
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(98, 230, 201, 0.11),
-                    transparent 28%
+        body.light {
+            background-color: #eef3f8;
+            background-image:
+                linear-gradient(
+                    180deg,
+                    rgba(245, 247, 251, 0.78) 0%,
+                    rgba(245, 247, 251, 0.58) 50%,
+                    rgba(245, 247, 251, 0.82) 100%
                 ),
-                radial-gradient(
-                    circle at 85% 25%,
-                    rgba(125, 211, 252, 0.10),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 50% 85%,
-                    rgba(98, 230, 201, 0.06),
-                    transparent 25%
-                );
+                url("assets/portfolio-background.png");
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-blend-mode: normal;
         }
 
         .grid-bg {
             position: fixed;
             inset: 0;
-            z-index: -2;
-            opacity: 0.18;
+            z-index: -1;
+            opacity: 0.08;
             pointer-events: none;
 
             background-image:
                 linear-gradient(
-                    rgba(255,255,255,0.045) 1px,
+                    rgba(255,255,255,0.05) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,0.045) 1px,
+                    rgba(255,255,255,0.05) 1px,
                     transparent 1px
                 );
 
@@ -233,16 +242,16 @@
         }
 
         body.light .grid-bg {
-            opacity: 0.45;
+            opacity: 0.20;
 
             background-image:
                 linear-gradient(
-                    rgba(15,23,42,0.04) 1px,
+                    rgba(15,23,42,0.035) 1px,
                     transparent 1px
                 ),
                 linear-gradient(
                     90deg,
-                    rgba(15,23,42,0.04) 1px,
+                    rgba(15,23,42,0.035) 1px,
                     transparent 1px
                 );
         }
@@ -1439,10 +1448,26 @@
 
         body {
             min-height: 100vh;
-            background:
-                radial-gradient(circle at 10% 10%, rgba(98, 230, 201, 0.035), transparent 24%),
-                radial-gradient(circle at 90% 50%, rgba(125, 211, 252, 0.035), transparent 26%),
-                var(--bg);
+            background-color: #06101d;
+            background-image:
+                radial-gradient(circle at 10% 10%, rgba(98, 230, 201, 0.08), transparent 24%),
+                radial-gradient(circle at 90% 50%, rgba(125, 211, 252, 0.08), transparent 28%),
+                url("assets/portfolio-background.png");
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body.light {
+            background-color: #eef3f8;
+            background-image:
+                linear-gradient(rgba(245, 247, 251, 0.72), rgba(245, 247, 251, 0.72)),
+                url("assets/portfolio-background.png");
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         ::selection {
@@ -2043,15 +2068,6 @@
             <div class="nav-actions">
 
                 <button
-                    class="icon-btn"
-                    id="themeBtn"
-                    aria-label="Toggle theme"
-                    title="Toggle theme"
-                >
-                    ☼
-                </button>
-
-                <button
                     class="icon-btn menu-btn"
                     id="menuBtn"
                     aria-label="Open menu"
@@ -2171,6 +2187,7 @@
 
                     <div class="quick-info">
                         <span class="chip">Python</span>
+                        <span class="chip">DSA</span>
                         <span class="chip">AI / ML</span>
                         <span class="chip">Data Analytics</span>
                         <span class="chip">Full Stack</span>
@@ -2240,19 +2257,19 @@
 
                                 <div>
                                     <span class="code-string">
-                                        AI Resume Builder
-                                    </span>
-                                </div>
-
-                                <div>
-                                    <span class="code-string">
                                         AttendFace
                                     </span>
                                 </div>
 
                                 <div>
                                     <span class="code-string">
-                                        Chess Game
+                                        StockVision AI
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="code-string">
+                                        Portfolio Website
                                     </span>
                                 </div>
 
@@ -2287,7 +2304,7 @@
                             </div>
 
                             <div class="float-text">
-                                AI Resume Builder • Chess Game • AttendFace
+                                AttendFace • StockVision AI • Portfolio Website
                             </div>
                         </div>
 
@@ -2330,15 +2347,12 @@
                     <div class="glass-card reveal">
 
                         <p class="about-copy">
-                            I am a motivated Computer Science Engineering
-                            student interested in building efficient,
-                            useful and real-world software solutions.
-                        </p>
-
-                        <p class="about-copy">
-                            My current focus is on Python, Artificial
-                            Intelligence, Data Analytics, Machine Learning
-                            fundamentals and Full-Stack Web Development.
+                            Computer Science Engineering student skilled in
+                            Python, DSA, Full-Stack Development, Data Science,
+                            AI, and Data Analytics. Experienced through
+                            internships and practical projects, with a focus
+                            on solving real-world problems and continuous
+                            growth.
                         </p>
 
                         <div class="stats">
@@ -2351,9 +2365,9 @@
                             </div>
 
                             <div class="stat">
-                                <div class="stat-number">03</div>
+                                <div class="stat-number">02</div>
                                 <div class="stat-label">
-                                    Practical Experiences
+                                    Internships
                                 </div>
                             </div>
 
@@ -2387,9 +2401,10 @@
                         </p>
 
                         <div class="quick-info" style="margin-top:25px;">
-                            <span class="chip">Problem Solving</span>
-                            <span class="chip">Teamwork</span>
                             <span class="chip">Communication</span>
+                            <span class="chip">Teamwork</span>
+                            <span class="chip">Time Management</span>
+                            <span class="chip">Adaptability</span>
                             <span class="chip">DSA</span>
                             <span class="chip">Data Visualization</span>
                         </div>
@@ -2433,7 +2448,13 @@
                                 Data Structures & Algorithms
                             </span>
                             <span class="skill">
-                                Database Fundamentals
+                                Object-Oriented Programming
+                            </span>
+                            <span class="skill">
+                                SQL
+                            </span>
+                            <span class="skill">
+                                DBMS Fundamentals
                             </span>
                         </div>
                     </div>
@@ -2449,7 +2470,7 @@
                                 Artificial Intelligence
                             </span>
                             <span class="skill">
-                                Machine Learning Fundamentals
+                                Machine Learning
                             </span>
                             <span class="skill">
                                 Data Analytics
@@ -2476,9 +2497,8 @@
                         <div class="skill-list">
                             <span class="skill">Communication</span>
                             <span class="skill">Teamwork</span>
-                            <span class="skill">
-                                Problem Solving
-                            </span>
+                            <span class="skill">Time Management</span>
+                            <span class="skill">Adaptability</span>
                         </div>
                     </div>
 
@@ -2522,7 +2542,7 @@
                         <span class="timeline-dot"></span>
 
                         <div class="timeline-date">
-                            Sep 2026 – Present
+                            Sep 2026 – Nov 2026
                         </div>
 
                         <div class="timeline-title">
@@ -2535,10 +2555,11 @@
 
                         <p class="timeline-copy">
                             Gaining practical experience in Artificial
-                            Intelligence through real-world tasks,
-                            structured training and applied projects.
-                            Strengthening Python-based problem-solving
-                            and technical development skills.
+                            Intelligence through real-world tasks, structured
+                            training, and applied projects. Strengthening
+                            Python-based problem-solving and technical
+                            development skills through practical, real-world
+                            activities.
                         </p>
 
                     </div>
@@ -2585,9 +2606,12 @@
                         </div>
 
                         <p class="timeline-copy">
-                            Assisted with data collection, cleaning and
-                            organization using Microsoft Excel, and
-                            prepared reports, charts and dashboards.
+                            Assisted with data collection, cleaning, and
+                            organization. Prepared clear reports, charts,
+                            and dashboards to present analytical findings.
+                            Strengthened teamwork, communication, and
+                            time-management skills by consistently meeting
+                            deadlines.
                         </p>
 
                     </div>
@@ -2607,7 +2631,8 @@
                         </div>
 
                         <div class="timeline-place">
-                            University Institute of Technology, Shimla
+                            University Institute of Technology,
+                            Himachal Pradesh University, Shimla
                         </div>
 
                     </div>
@@ -2621,11 +2646,12 @@
                         </div>
 
                         <div class="timeline-title">
-                            Diploma — Computer Science & Engineering
+                            Polytechnic — Computer Science & Engineering
                         </div>
 
                         <div class="timeline-place">
-                            Himachal Institute of Engineering & Technology
+                            Himachal Institute of Engineering and Technology,
+                            Shahpur
                         </div>
 
                     </div>
@@ -2668,29 +2694,30 @@
                     <article class="project-card reveal">
 
                         <div class="project-number">
-                            PROJECT 01
+                            PROJECT 01 · JUL 2026 – SEP 2026
                         </div>
 
-                        <h3>AI Resume Builder</h3>
+                        <h3>AttendFace</h3>
 
                         <p class="project-description">
-                            Flask-based web application that generates
-                            structured, job-ready resumes from user input
-                            with a form + live-preview interface.
+                            Built a desktop attendance system using Python,
+                            OpenCV and CustomTkinter, with face recognition
+                            to automatically mark attendance and SQLite-
+                            backed attendance records.
                         </p>
 
                         <div class="tag-row">
                             <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">Gemini API</span>
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">CustomTkinter</span>
+                            <span class="tag">SQLite</span>
                         </div>
 
                         <div class="project-actions">
 
                             <button
                                 class="project-btn"
-                                onclick="openProject('resume')"
+                                onclick="openProject('attendface')"
                             >
                                 Case Study
                             </button>
@@ -2704,29 +2731,29 @@
                     <article class="project-card reveal">
 
                         <div class="project-number">
-                            PROJECT 02
+                            PROJECT 02 · SEP 2026 – ONGOING
                         </div>
 
-                        <h3>Chess Game</h3>
+                        <h3>Portfolio Website</h3>
 
                         <p class="project-description">
-                            Fully functional chess game built with Python,
-                            Tkinter and python-chess with move validation,
-                            checkmate detection and a basic AI opponent.
+                            Responsive personal portfolio website built with
+                            HTML, CSS and JavaScript to showcase projects,
+                            skills and resume. Deployed as a PWA via GitHub Pages.
                         </p>
 
                         <div class="tag-row">
-                            <span class="tag">Python</span>
-                            <span class="tag">Tkinter</span>
-                            <span class="tag">python-chess</span>
-                            <span class="tag">AI</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PWA</span>
                         </div>
 
                         <div class="project-actions">
 
                             <button
                                 class="project-btn"
-                                onclick="openProject('chess')"
+                                onclick="openProject('portfolio')"
                             >
                                 Case Study
                             </button>
@@ -2740,29 +2767,29 @@
                     <article class="project-card reveal">
 
                         <div class="project-number">
-                            PROJECT 03
+                            PROJECT 03 · AUG 2026 – SEP 2026
                         </div>
 
-                        <h3>AttendFace</h3>
+                        <h3>StockVision AI</h3>
 
                         <p class="project-description">
-                            Face recognition smart attendance system
-                            using Python and OpenCV with timestamped
-                            attendance records stored in Excel.
+                            Built an AI-powered stock market analytics platform
+                            combining historical market data, machine learning
+                            and technical indicators for forecasting.
                         </p>
 
                         <div class="tag-row">
                             <span class="tag">Python</span>
-                            <span class="tag">OpenCV</span>
-                            <span class="tag">Face Recognition</span>
-                            <span class="tag">Excel</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Gemini</span>
                         </div>
 
                         <div class="project-actions">
 
                             <button
                                 class="project-btn"
-                                onclick="openProject('attendface')"
+                                onclick="openProject('stockvision')"
                             >
                                 Case Study
                             </button>
@@ -2823,9 +2850,70 @@
                         </h3>
 
                         <p>
-                            Internshala Trainings · In Progress · 2026
+                            Internshala Trainings · In Progress · Aug 2026 – Oct 2026
                         </p>
 
+                    </div>
+
+                    <div class="cert-card reveal">
+
+                        <h3>
+                            Data Science with Python
+                        </h3>
+
+                        <p>
+                            Solitaire Infosystem Pvt. Ltd. · Mohali ·
+                            Aug 2026 – Sep 2026
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
+             MORE ABOUT ME
+        ====================================================== -->
+
+        <section id="more-about-me">
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+                        <div class="section-kicker">
+                            Beyond the Resume
+                        </div>
+
+                        <h2 class="section-title">
+                            Life beyond code.
+                        </h2>
+                    </div>
+
+                </div>
+
+                <div class="cert-grid">
+
+                    <div class="cert-card reveal">
+                        <h3>Hobbies</h3>
+                        <p>Chess, Fitness, Travelling, Music</p>
+                    </div>
+
+                    <div class="cert-card reveal">
+                        <h3>Extra-Curricular Activities</h3>
+                        <p>
+                            Actively engaged in internships and training programs
+                            spanning AI, Data Analytics, Data Science, and
+                            Full-Stack Web Development, alongside the Professional
+                            Edge Career Essentials program by NIIT Foundation.
+                        </p>
+                        <p>
+                            Continuously building projects in AI and web development,
+                            and exploring Machine Learning, Cloud Computing, and DSA
+                            through technical workshops and self-driven learning.
+                        </p>
                     </div>
 
                 </div>
@@ -3053,40 +3141,10 @@
 
         /* ========================================================
            THEME
+           Dark theme is intentionally fixed for this portfolio.
+           The generated futuristic background is designed for the
+           dark palette, so no light-mode switch is used.
         ======================================================== */
-
-        const themeBtn = document.getElementById("themeBtn");
-
-        const savedTheme = localStorage.getItem("portfolio-theme");
-
-        if (savedTheme === "light") {
-            document.body.classList.add("light");
-        }
-
-        updateThemeIcon();
-
-        themeBtn.addEventListener("click", () => {
-
-            document.body.classList.toggle("light");
-
-            const isLight =
-                document.body.classList.contains("light");
-
-            localStorage.setItem(
-                "portfolio-theme",
-                isLight ? "light" : "dark"
-            );
-
-            updateThemeIcon();
-        });
-
-        function updateThemeIcon() {
-
-            themeBtn.textContent =
-                document.body.classList.contains("light")
-                    ? "☾"
-                    : "☼";
-        }
 
         /* ========================================================
            MOBILE MENU
@@ -3207,96 +3265,95 @@
 
         const projects = {
 
-            resume: {
-
-                kicker: "PROJECT 01",
-
-                title: "AI Resume Builder",
-
-                description:
-                    "A Flask-based web application designed to generate structured, job-ready resumes from user input using a split-panel form and live-preview interface.",
-
-                points: [
-
-                    "Built using Flask with a form + live resume preview workflow.",
-
-                    "Designed a rule-based content engine for polished resume bullet points.",
-
-                    "Optional Google Gemini API integration can provide enhanced suggestions.",
-
-                    "Focused on producing structured and practical resume output."
-
-                ],
-
-                tags: [
-                    "Python",
-                    "Flask",
-                    "AI",
-                    "Gemini API"
-                ]
-
-            },
-
-            chess: {
-
-                kicker: "PROJECT 02",
-
-                title: "Chess Game",
-
-                description:
-                    "A fully functional desktop chess game built with Python, Tkinter and the python-chess library.",
-
-                points: [
-
-                    "Implemented complete move validation.",
-
-                    "Added checkmate detection.",
-
-                    "Built an interactive GUI with Tkinter.",
-
-                    "Added undo functionality.",
-
-                    "Implemented a basic AI opponent using algorithmic decision-making."
-
-                ],
-
-                tags: [
-                    "Python",
-                    "Tkinter",
-                    "python-chess",
-                    "AI"
-                ]
-
-            },
-
             attendface: {
 
-                kicker: "PROJECT 03",
+                kicker: "PROJECT 01",
 
                 title: "AttendFace – Face Recognition Smart Attendance",
 
                 description:
-                    "An ongoing real-time face detection and recognition system designed to automate attendance marking.",
+                    "A desktop attendance system using Python, OpenCV and CustomTkinter, with face recognition to automatically mark attendance.",
 
                 points: [
 
-                    "Developed using Python and OpenCV.",
+                    "Built a desktop attendance system using Python, OpenCV and CustomTkinter.",
 
-                    "Designed for real-time face detection and recognition.",
+                    "Implemented admin login and webcam-based student enrollment.",
 
-                    "Automates attendance marking.",
+                    "Automated attendance marking through face recognition.",
 
-                    "Stores timestamped attendance records in Excel.",
-
-                    "Designed to reduce manual attendance effort."
+                    "Managed attendance records with SQLite-backed storage."
 
                 ],
 
                 tags: [
                     "Python",
                     "OpenCV",
-                    "Face Recognition",
-                    "Excel"
+                    "CustomTkinter",
+                    "SQLite",
+                    "Face Recognition"
+                ]
+
+            },
+
+            portfolio: {
+
+                kicker: "PROJECT 02",
+
+                title: "Portfolio Website",
+
+                description:
+                    "A responsive personal portfolio website built with HTML, CSS and JavaScript to showcase projects, skills and resume.",
+
+                points: [
+
+                    "Built a responsive personal portfolio site with HTML, CSS and JavaScript.",
+
+                    "Applied responsive design and animation techniques.",
+
+                    "Integrated project, skills, experience, education and resume sections.",
+
+                    "Deployed as a Progressive Web App via GitHub Pages for cross-device access."
+
+                ],
+
+                tags: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "PWA",
+                    "GitHub Pages"
+                ]
+
+            },
+
+            stockvision: {
+
+                kicker: "PROJECT 03",
+
+                title: "StockVision AI",
+
+                description:
+                    "An AI-powered stock market analytics platform combining historical market data, machine learning and technical indicators for forecasting.",
+
+                points: [
+
+                    "Built an analytics platform around historical stock-market data.",
+
+                    "Combined machine learning with technical indicators for forecasting.",
+
+                    "Developed dashboards and visual analytics to explore market data.",
+
+                    "Integrated a Gemini-powered AI assistant to support analysis and insights."
+
+                ],
+
+                tags: [
+                    "Python",
+                    "Machine Learning",
+                    "Data Analytics",
+                    "Technical Indicators",
+                    "Gemini"
                 ]
 
             }
